@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="./static/css/monokai.css">
+	<link rel="stylesheet" href="./static/css/base.css">
+
+	<meta charset="UTF-8">
+	<title>PooleApp.com</title>
+</head>
+<body>
+	<div class="header">
+		<div class="stripes">
+			<div class="noise">
+				<div class="container">
+					<h1>PooleApp.com</h1>
+					<h2>serving dynamic data to your static sites</h2>
+					<a href="/signup">get started</a><a href="/signin">sign in</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="container">
+
+			<h2>Why use PooleApp?</h2>
+			<p>
+				It is good to keep things simple. Many people are starting to see the benefits of building sites with static site generators like <a href="">Jekyll</a> or <a href="">Docpad</a> instead of using databases and server-side scripting. Static sites are faster, cheaper and easier to host, but sometimes you need to mix in a tiny bit of catured data.
+			</p>
+			<p>
+				PooleApp gives you a form to put on your site which posts to our servers. You can access that data with a simple query either as part of your build, or in the browser with Javascript.
+			</p>
+
+			<h2>How to use PooleApp</h2>
+			<p>
+				Simply add a form to your site which posts to us and includes <a href="">your API Key</a> as part of the post. You can include as many text fields as you like. We'll stash it all for you to query later.
+			</p>
+			<pre><code>
+&lt;form action=&quot;http://PooleApp.com/data&quot; method=&quot;post&quot;&gt;
+	&lt;input type=&quot;hidden&quot; name=&quot;api-key&quot; value=&quot;API-KEY&quot; /&gt;
+	&lt;input type=&quot;text&quot; name=&quot;your-data&quot; /&gt;
+	...
+	&lt;input type=&quot;submit&quot; value=&quot;submit&quot; /&gt;
+&lt;/form&gt;
+			</code></pre>
+			<div class="promo"><a href="">register to get your API key now</a></div>
+
+			<h2>Get your data with a simple request</h2>
+			<p>
+				Some information about how you can use this service to add content to your static site.
+			</p>
+			<pre><code class="http">
+http://pooleapp.com/data/API-SECRET?foo=bar
+			</code></pre>
+			<div class="promo"><a href="">register to get your API secret now</a></div>
+
+			<h2>Your data</h2>
+			<p>
+				Your form has capture the following data. You can also get this data as <a href="">JSON</a>
+			</p>
+			<table>
+				<tr>
+					<th>datastamp</th>
+					<th>referring URL</th>
+					<th>field one</th>
+					<th>field two</th>
+					<th>field three</th>
+					<th>field four</th>
+				</tr>
+				<tr>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+				</tr>
+				<tr>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+					<td>foo</td>
+				</tr>
+			</table>
+
+
+
+			<h2>Examples</h2>
+			<p>
+				Getting your data couldn't be simpler. Here are some examples of using PooleApp to deliver comments for your blog in some popular languges.
+			</p>
+			<h3>Javascript</h3>
+			<pre><code>
+// Javascript using jQuery
+var thispage = document.location.href;
+$.getJSON('http://pooleapp.com/data/API-SECRET', function(data) {
+  $.each(data, function(key, val) {
+    //do stuff
+  });
+});
+			</code></pre>
+
+			<h3>Python</h3>
+			<pre><code>
+// Javascript using jQuery
+$.getJSON('http://pooleapp.com/data/API-SECRET', function(data) {
+  $.each(data, function(key, val) {
+    //do stuff
+  });
+});
+			</code></pre>
+
+			<h3>Ruby</h3>
+			<pre><code>
+// Javascript using jQuery
+$.getJSON('http://pooleapp.com/data/API-SECRET', function(data) {
+  $.each(data, function(key, val) {
+    //do stuff
+  });
+});
+			</code></pre>
+
+
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			about PooleApp and some meta links
+			<a href="">security</a> | <a href="">privacy</a> | <a href="">@PooleApp on twitter</a>
+		</div>
+	</div>
+
+	<script src="./static/js/jquery.min.js"></script>
+	<script src="./static/js/highlight.pack.js"></script>
+	<script src="./static/js/base.js"></script>
+</body>
+</html>
